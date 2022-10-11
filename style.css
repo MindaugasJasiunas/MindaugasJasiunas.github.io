@@ -1,0 +1,92 @@
+body {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #eee;
+}
+
+.console {
+  font-family: "Fira Mono";
+  width: 700px;
+  height: 450px;
+  box-sizing: border-box;
+  margin: auto;
+}
+
+.console header {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-color: #555;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  color: #ddd;
+}
+
+.console .consolebody {
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  box-sizing: border-box;
+  padding: 20px;
+  height: calc(100% - 40px);
+  overflow: scroll;
+  background-color: #000;
+  color: #63de00;
+}
+
+.console .consolebody p {
+  line-height: 1.5rem;
+}
+
+.cursor {
+  position: relative;
+  line-height: 1.5rem;
+}
+
+.cursor::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 625px;
+  /* Remove display: inline-block if not required to be on the same line as text etc */
+  /* display: inline-block; */
+  background-color: green;
+  vertical-align: top;
+  width: 5px;
+  height: 1.4rem;
+  /* 
+  Animation paramaters:
+  blink = animation-name, 
+  1s = animation-duration, 
+  step-end = animation-timing-function,
+  infinite = animation-iteration-count
+  */
+  -webkit-animation: blink 1s step-end infinite;
+  animation: blink 1s step-end infinite;
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
